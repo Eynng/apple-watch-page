@@ -10,11 +10,11 @@ const imagemMiniatura2 = document.querySelector('[for="2-imagem"] img');
 
 const opcoesTamanho = ["41 mm", "45 mm"];
 const opcoesCores = [
-  "Verde-cipreste",
-  "Azul-inverno",
-  "Meia-noite",
+  "Verde cipreste",
+  "Azul inverno",
+  "Meia noite",
   "Estelar",
-  "Rosa-claro",
+  "Rosa claro",
 ];
 // console.log(opcoesTamanho[0])
 
@@ -32,7 +32,14 @@ function atualizarCorSelecionada() {
 
   const nomeCor = opcoesCores[numCorSelecionada];
 
-  console.log(nomeCor);
+  tituloProduto.innerText =
+    "Pulseira loop esportiva " +
+    nomeCor.toLowerCase() +
+    " para caixa de " +
+    opcoesTamanho[numTamanhoSelecionado];
+  (" ");
+
+  nomeCorSelecionada.innerText = "Cor - " + nomeCor;
 }
 
 function atualizarTamanho() {
@@ -49,7 +56,10 @@ function atualizarTamanho() {
   //   console.log(opcaoTamanhoSelecionado)
 
   tituloProduto.innerText =
-    "Pulseira loop esportiva azul-inverno para caixa de " + tamanhoCaixa;
+    "Pulseira loop esportiva " +
+    opcoesCores[numCorSelecionada].toLowerCase() +
+    " para caixa de " +
+    tamanhoCaixa;
 
   if (tamanhoCaixa === "41 mm") {
     imagemVisualizacao.classList.add("caixa-pequena");

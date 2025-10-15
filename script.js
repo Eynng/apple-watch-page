@@ -10,11 +10,11 @@ const imagemMiniatura2 = document.querySelector('[for="2-imagem"] img');
 
 const opcoesTamanho = ["41 mm", "45 mm"];
 const opcoesCores = [
-  "Verde cipreste",
-  "Azul inverno",
-  "Meia noite",
+  "Verde-cipreste",
+  "Azul-inverno",
+  "Meia-noite",
   "Estelar",
-  "Rosa claro",
+  "Rosa-claro",
 ];
 // console.log(opcoesTamanho[0])
 
@@ -37,9 +37,28 @@ function atualizarCorSelecionada() {
     nomeCor.toLowerCase() +
     " para caixa de " +
     opcoesTamanho[numTamanhoSelecionado];
-  (" ");
 
   nomeCorSelecionada.innerText = "Cor - " + nomeCor;
+
+  imagemVisualizacao.src =
+    "./imagens/opcoes-cores/imagens-" +
+    nomeCor.toLowerCase() +
+    "/imagem-" +
+    numImagemSelecionada +
+    ".jpeg";
+
+  imagemMiniatura0.src =
+    "./imagens/opcoes-cores/imagens-" +
+    nomeCor.toLowerCase() +
+    "/imagem-0.jpeg";
+  imagemMiniatura1.src =
+    "./imagens/opcoes-cores/imagens-" +
+    nomeCor.toLowerCase() +
+    "/imagem-1.jpeg";
+  imagemMiniatura2.src =
+    "./imagens/opcoes-cores/imagens-" +
+    nomeCor.toLowerCase() +
+    "/imagem-2.jpeg";
 }
 
 function atualizarTamanho() {
@@ -78,7 +97,9 @@ function atualizarImagemSelecionada() {
   //   console.log(opcaoImagemSelecionada);
 
   imagemVisualizacao.src =
-    "./imagens/opcoes-cores/imagens-azul-inverno/imagem-" +
+    "./imagens/opcoes-cores/imagens-" +
+    opcoesCores[numCorSelecionada].toLowerCase() +
+    "/imagem-" +
     numImagemSelecionada +
     ".jpeg";
 }
